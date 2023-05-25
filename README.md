@@ -5,7 +5,7 @@ Works with MacOS, Windows, Linux, and Any Digital Audio Workstation (DAW)
 Designed specifically for musicians, producers, and sound engineers, it is a tool for creating simple to advanced delay effects and enhancing creative audio productions. 
 
 ## Functionality
-![Screenshot of DelayMan's UI] (assests/images/DelayMan_UI_Screenshot.PNG)
+![Screenshot of DelayMan's UI] (assets/images/DelayMan_UI_Screenshot.PNG)
 
 Feautres customized editor UI with 3 interactive knobs and corresponding number values readout.
 
