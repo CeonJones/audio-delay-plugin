@@ -11,7 +11,7 @@
 
 //==============================================================================
 //Constructor where we create UI programmatically
-NewProjectAudioProcessorEditor::NewProjectAudioProcessorEditor (NewProjectAudioProcessor& p)
+DelayManAudioProcessorEditor::DelayManAudioProcessorEditor (DelayManAudioProcessor& p)
     : AudioProcessorEditor (&p), audioProcessor (p),
 //initializing all three attachment classes
     gainAttachment (p.state, "gain", gainSlider),
@@ -27,7 +27,25 @@ NewProjectAudioProcessorEditor::NewProjectAudioProcessorEditor (NewProjectAudioP
     for (auto* slider : {&gainSlider, &feedbackSlider, &mixSlider})
     {
         slider->setTextBoxStyle(juce::Slider::TextBoxAbove, true, 200, 30);
-        //makes slider a child comoponent of the audio processor editor
+        
+        //creating label variables
+        juce::Label* label = new juce::Label();
+        
+        //assigning unique names to the label variables
+        if (slider == &gainSlider)
+            label->setText("Gain", juce::NotificationType::dontSendNotification);
+        else if (slider == &feedbackSlider)
+            label->setText("Feedback", juce::NotificationType::dontSendNotification);
+        else if (slider == &mixSlider)
+            label->setText("Mix", juce::NotificationType::dontSendNotification);
+        
+        //setting style and font size of slider labels
+        label->attachToComponent(slider, false);
+        label->setFont(juce::Font(14.0f));
+        label->setJustificationType(juce::Justification::centred);
+        
+        //makes slider a child component of the audio processor editor
+        addAndMakeVisible(label);
         addAndMakeVisible(slider);
     }
     
@@ -37,12 +55,12 @@ NewProjectAudioProcessorEditor::NewProjectAudioProcessorEditor (NewProjectAudioP
     setSize (400, 300);
 }
 
-NewProjectAudioProcessorEditor::~NewProjectAudioProcessorEditor()
+DelayManAudioProcessorEditor::~DelayManAudioProcessorEditor()
 {
 }
 
 //==============================================================================
-void NewProjectAudioProcessorEditor::paint (juce::Graphics& g)
+void DelayManAudioProcessorEditor::paint (juce::Graphics& g)
 {
     //background color
     g.fillAll(juce::Colour (0xff121212));
@@ -69,11 +87,12 @@ void NewProjectAudioProcessorEditor::paint (juce::Graphics& g)
     g.setGradientFill(gradient);
     
     //adding fitted text to rectangle with gradient of letters
-    g.setFont(textArea.toFloat().getHeight());
-              g.drawFittedText("FUCK", textArea, juce::Justification::centred, 1);
+    float fontSize = textArea.getHeight() * 0.2f; //changes font size
+    g.setFont(fontSize);
+    g.drawFittedText("DelayMan", textArea, juce::Justification::centred, 1);
 }
 //Whenever user changes window size this function will be called
-void NewProjectAudioProcessorEditor::resized()
+void DelayManAudioProcessorEditor::resized()
 {
     //Where children of parent functions will be layed out, for example if you wanted a flexble or scalable user interface
     juce::Rectangle<int> bounds = getLocalBounds();

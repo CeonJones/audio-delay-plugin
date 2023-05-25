@@ -14,11 +14,11 @@
 //==============================================================================
 /**
 */
-class NewProjectAudioProcessorEditor  : public juce::AudioProcessorEditor
+class DelayManAudioProcessorEditor  : public juce::AudioProcessorEditor
 {
 public:
-    NewProjectAudioProcessorEditor (NewProjectAudioProcessor&);
-    ~NewProjectAudioProcessorEditor() override;
+    DelayManAudioProcessorEditor (DelayManAudioProcessor&);
+    ~DelayManAudioProcessorEditor() override;
 
     //==============================================================================
     void paint (juce::Graphics&) override;
@@ -27,7 +27,7 @@ public:
 private:
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
-    NewProjectAudioProcessor& audioProcessor;
+    DelayManAudioProcessor& audioProcessor;
     
     //parent function instantiantion for three sliders into existence so that they can be called in the plugin processor
     juce::Slider gainSlider, feedbackSlider, mixSlider;
@@ -35,5 +35,5 @@ private:
     //attaching gui components to actual audio processing tree so that knobs are actually, referring to the slider it's controlling
     juce::AudioProcessorValueTreeState::SliderAttachment gainAttachment, feedbackAttachment, mixAttachment;
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (NewProjectAudioProcessorEditor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DelayManAudioProcessorEditor)
 };

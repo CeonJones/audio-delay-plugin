@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="xZEY9D" name="Simple Delay" projectType="audioplug" useAppConfig="0"
-              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1">
-  <MAINGROUP id="rPOcKw" name="Simple Delay">
+<JUCERPROJECT id="xZEY9D" name="DelayMan" projectType="audioplug" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
+              companyName="Beige Industries">
+  <MAINGROUP id="rPOcKw" name="DelayMan">
     <GROUP id="{F322B07E-2787-142E-901C-5AA8DB91CEE5}" name="Source">
       <FILE id="f9bg04" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
