@@ -1,2 +1,2 @@
-# audio-delay-plugin
-A audio delay plugin created using JUCE framework in C++
+# DelayMan
+DelayMan is an audio delay plugin created using JUCE framework in C++. Offering musicians, producers, and sound engineers a tool for creating simple delay effects and enhancing creative audio productions. Super intiutive and easily navigable interface that integrates will any DAW of your choice. DelayMan offers precise control over delay parameters, resulting in immersive soundscapes and sonic textures. 
